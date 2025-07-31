@@ -1,7 +1,15 @@
-import React from "react";
+import { Metadata } from "next";
+import ClientHome from "./ClientHome";
 
-const Fashion = () => {
-  return <div>Fashion</div>;
+export const generateMetadata = (): Metadata => {
+  return {
+    title: "Fashion",
+    icons: {
+      icon: [{ url: "/fashion/favicon.svg", type: "image/svg+xml" }],
+    },
+  };
 };
 
-export default Fashion;
+export default function Home() {
+  return <ClientHome />;
+}
