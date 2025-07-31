@@ -19,10 +19,18 @@ const Page = () => {
   }, []);
 
   useGSAP(() => {
+    // gsap.fromTo(
+    //   mainRef.current,
+    //   { opacity: 0, y: 30 },
+    //   { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    // );
     gsap.fromTo(
-      mainRef.current,
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+      ".box",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      { y: 0, stagger: 0.1, opacity: 1 }
     );
   }, [loaded]);
   return (
@@ -40,7 +48,7 @@ const Page = () => {
                 width={1920}
                 height={1080}
                 alt="picture"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover box"
               />
             </div>
           ))}
